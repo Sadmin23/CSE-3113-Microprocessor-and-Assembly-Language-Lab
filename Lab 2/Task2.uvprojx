@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>Task1</OutputName>
+          <OutputName>Task2</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -385,9 +385,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>task1.s</FileName>
+              <FileName>task2.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\task1.s</FilePath>
+              <FilePath>.\task2.s</FilePath>
             </File>
           </Files>
         </Group>
