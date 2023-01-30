@@ -11,7 +11,7 @@ Section Cross References
     startup_stm32f446xx.o(RESET) refers to startup_stm32f446xx.o(.text) for Reset_Handler
     startup_stm32f446xx.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_stm32f446xx.o(.text) refers to system_stm32f4xx.o(.text.SystemInit) for SystemInit
-    startup_stm32f446xx.o(.text) refers to task2.o(helloworld) for __main
+    startup_stm32f446xx.o(.text) refers to task2.o(task2) for __main
     startup_stm32f446xx.o(.text) refers to startup_stm32f446xx.o(HEAP) for Heap_Mem
     startup_stm32f446xx.o(.text) refers to startup_stm32f446xx.o(STACK) for Stack_Mem
     system_stm32f4xx.o(.ARM.exidx.text.SystemInit) refers to system_stm32f4xx.o(.text.SystemInit) for [Anonymous Symbol]
@@ -52,8 +52,8 @@ Image Symbol Table
     .text                                    0x080001c4   Section       64  startup_stm32f446xx.o(.text)
     .text                                    0x08000204   Section        0  heapauxi.o(.text)
     [Anonymous Symbol]                       0x0800020c   Section        0  system_stm32f4xx.o(.text.SystemInit)
-    $v0                                      0x08000220   Number         0  task2.o(helloworld)
-    helloworld                               0x08000220   Section       34  task2.o(helloworld)
+    $v0                                      0x08000220   Number         0  task2.o(task2)
+    task2                                    0x08000220   Section       34  task2.o(task2)
     Heap_Mem                                 0x20000000   Data         512  startup_stm32f446xx.o(HEAP)
     HEAP                                     0x20000000   Section      512  startup_stm32f446xx.o(HEAP)
     Stack_Mem                                0x20000200   Data        1024  startup_stm32f446xx.o(STACK)
@@ -169,7 +169,7 @@ Image Symbol Table
     __rt_heap_escrow$2region                 0x08000207   Thumb Code     2  heapauxi.o(.text)
     __rt_heap_expand$2region                 0x08000209   Thumb Code     2  heapauxi.o(.text)
     SystemInit                               0x0800020d   Thumb Code    18  system_stm32f4xx.o(.text.SystemInit)
-    __main                                   0x08000221   Thumb Code     0  task2.o(helloworld)
+    __main                                   0x08000221   Thumb Code     0  task2.o(task2)
 
 
 
@@ -191,7 +191,7 @@ Memory Map of the image
     0x0800020a   0x0800020a   0x00000002   PAD
     0x0800020c   0x0800020c   0x00000012   Code   RO           14    .text.SystemInit    system_stm32f4xx.o
     0x0800021e   0x0800021e   0x00000002   PAD
-    0x08000220   0x08000220   0x00000022   Code   RO            1  * helloworld          task2.o
+    0x08000220   0x08000220   0x00000022   Code   RO            1  * task2               task2.o
 
 
     Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000244, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)

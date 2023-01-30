@@ -1,4 +1,4 @@
-	    AREA test, CODE, READONLY
+	    AREA task1, CODE, READONLY
 		ENTRY
 		EXPORT main
 main

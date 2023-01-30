@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Task2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Task2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Jan 30 18:05:54 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Jan 30 18:30:17 2023
 <BR><P>
 <H3>Maximum Stack Usage =          0 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -131,7 +131,7 @@ Function Pointers
  <LI><a href="#[4f]">USART6_IRQHandler</a> from startup_stm32f446xx.o(.text) referenced from startup_stm32f446xx.o(RESET)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_stm32f446xx.o(.text) referenced from startup_stm32f446xx.o(RESET)
  <LI><a href="#[a]">WWDG_IRQHandler</a> from startup_stm32f446xx.o(.text) referenced from startup_stm32f446xx.o(RESET)
- <LI><a href="#[61]">__main</a> from task2.o(helloworld) referenced from startup_stm32f446xx.o(.text)
+ <LI><a href="#[61]">__main</a> from task2.o(task2) referenced from startup_stm32f446xx.o(.text)
 </UL>
 <P>
 <H3>
@@ -476,7 +476,7 @@ Global Symbols
 <P><STRONG><a name="[60]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, system_stm32f4xx.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f446xx.o(.text)
 </UL>
-<P><STRONG><a name="[61]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, task2.o(helloworld))
+<P><STRONG><a name="[61]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, task2.o(task2))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f446xx.o(.text)
 </UL><P>
 <H3>

@@ -1,7 +1,7 @@
 SWI_WriteC EQU &0
 SWI_Exit EQU &11
 	
-	AREA helloworld, CODE, READONLY
+	AREA task2, CODE, READONLY
 		ENTRY 
 		EXPORT __main
 			
