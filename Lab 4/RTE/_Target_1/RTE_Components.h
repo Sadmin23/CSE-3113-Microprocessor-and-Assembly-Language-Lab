@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Task6' 
+ * Project: 'Task1b' 
  * Target:  'Target 1' 
  */
 

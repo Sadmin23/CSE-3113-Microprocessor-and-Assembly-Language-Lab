@@ -1,4 +1,4 @@
-	    AREA task4, CODE, READONLY
+	    AREA task5, CODE, READONLY
 		ENTRY
 		EXPORT main
 			

@@ -28,7 +28,7 @@ Section Cross References
     __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
     __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
     __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
-    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to task5.o(task4) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to task5.o(task5) for main
     __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
     __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
     __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
@@ -267,10 +267,10 @@ Image Symbol Table
     .text                                    0x080004c0   Section        0  defsig_general.o(.text)
     .text                                    0x080004f2   Section        0  sys_wrch.o(.text)
     [Anonymous Symbol]                       0x08000500   Section        0  system_stm32f4xx.o(.text.SystemInit)
-    numbers                                  0x08000514   Data          20  task5.o(task4)
-    task4                                    0x08000514   Section       80  task5.o(task4)
-    n                                        0x08000528   Data           4  task5.o(task4)
-    $v0                                      0x0800052c   Number         0  task5.o(task4)
+    numbers                                  0x08000514   Data          20  task5.o(task5)
+    task5                                    0x08000514   Section       80  task5.o(task5)
+    n                                        0x08000528   Data           4  task5.o(task5)
+    $v0                                      0x0800052c   Number         0  task5.o(task5)
     $v0                                      0x08000564   Number         0  fpinit.o(x$fpl$fpinit)
     x$fpl$fpinit                             0x08000564   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
@@ -487,7 +487,7 @@ Image Symbol Table
     __default_signal_display                 0x080004c1   Thumb Code    50  defsig_general.o(.text)
     _ttywrch                                 0x080004f3   Thumb Code    14  sys_wrch.o(.text)
     SystemInit                               0x08000501   Thumb Code    18  system_stm32f4xx.o(.text.SystemInit)
-    main                                     0x0800052d   Thumb Code     0  task5.o(task4)
+    main                                     0x0800052d   Thumb Code     0  task5.o(task5)
     _fp_init                                 0x08000565   Thumb Code    26  fpinit.o(x$fpl$fpinit)
     __fplib_config_fpu_vfp                   0x0800057d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
     __fplib_config_pureend_doubles           0x0800057d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
@@ -577,7 +577,7 @@ Memory Map of the image
     0x080004f2   0x080004f2   0x0000000e   Code   RO          172    .text               c_w.l(sys_wrch.o)
     0x08000500   0x08000500   0x00000012   Code   RO           14    .text.SystemInit    system_stm32f4xx.o
     0x08000512   0x08000512   0x00000002   PAD
-    0x08000514   0x08000514   0x00000050   Code   RO            1  * task4               task5.o
+    0x08000514   0x08000514   0x00000050   Code   RO            1  * task5               task5.o
     0x08000564   0x08000564   0x0000001a   Code   RO          120    x$fpl$fpinit        fz_wm.l(fpinit.o)
     0x0800057e   0x0800057e   0x00000002   PAD
     0x08000580   0x08000580   0x00000010   Data   RO          195    Region$$Table       anon$$obj.o
