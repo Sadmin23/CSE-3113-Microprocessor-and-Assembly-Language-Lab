@@ -2,10 +2,8 @@
 		ENTRY
 		EXPORT main
 main
-	MOV r1, #2
-	MOV r2, #4
-	MOV r3, #5
-	ADD r0,r1,r2
-	ADD r0, r3
+	MOV r0, #4
+	MOV r1, #9
+	ADD r0,r1
 Stop  B Stop
      END
