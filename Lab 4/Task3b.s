@@ -25,11 +25,8 @@ main
 	LDR r6, [r6]
 	
 	CMP r6, #0
-	BEQ Zero
+	BEQ Stop
 	SDIV r7, r0, r6
-
-Zero
-	LDR r7, =0xFFFFFFFF
 
 Stop  B Stop
      END
