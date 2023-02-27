@@ -2,8 +2,10 @@
 		ENTRY
 		EXPORT main
 			
-x DCD 100
-y DCD 50		
+x DCD 4294967294
+y DCD 12349875
+z DCD 3
+a DCD 0
 			
 main
     LDR r0, = x
@@ -11,15 +13,23 @@ main
     LDR r1, = y
     LDR r1, [r1]
 	
-	ADDS r2, r0, r1
-	BCC  Stop
-	MOV  r2, #0x7FFFFFFF
+	ADD r2, r0, r1
+	SUB r3, r1, r0
+	
+	LDR r4, = z
+	LDR r4, [r4]
 
-	SUBS r3, r1, r0
-    BVS overflow
+	MUL r5, r0, r4
+	
+	LDR r6, = a
+	LDR r6, [r6]
+	
+	CMP r6, #0
+	BEQ Zero
+	SDIV r7, r0, r6
 
-overflow
-     MOV r3,#0 
+Zero
+	LDR r7, =0xFFFFFFFF
 
 Stop  B Stop
      END
