@@ -2,7 +2,7 @@
 		ENTRY
 		EXPORT main
 
-numbers DCD 4, 7, 3, 9, 1;
+numbers DCD 4, 7, 3, 9, 8;
 n DCD 5
 
 min PROC
@@ -11,22 +11,26 @@ min PROC
 	BEQ base
 	
 	SUB r3, r3, #1
-	LDR r5, [r2, r3, LSL #2]
-	CMP r4, r5
-	BGE push_r5
-	PUSH {r4, r3}
-	B min
+	LDR r6, [r2, r3, LSL #2]
+    PUSH {r6}
+	PUSH {lr}
+    PUSH {r2, r3}
+	BL min
+	POP {r4}
+	CMP r5, r4
+	BGE push_r4
+	PUSH {r5}
+	BX lr
 
-push_r5
-	PUSH {r5, r3}
-	B min	
+push_r4
+	PUSH {r4}
+	BX lr
 	
 	ENDP
 
 base
-	MOV r7, #0
-	LDR r4, [r2, r7, LSL #2]
-	PUSH {r4, r3}
+	LDR r4, [r2]
+	PUSH {r4}
 	BX lr
 
 main
