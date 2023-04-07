@@ -11,22 +11,19 @@ min PROC
 	BEQ base
 	
 	SUB r3, r3, #1
-	LDR r6, [r2, r3, LSL #2]
-    PUSH {r6}
-	PUSH {lr}
+	LDR r5, [r2, r3, LSL #2]
+    PUSH {r5}
     PUSH {r2, r3}
 	BL min
-	POP {r4}
-	CMP r5, r4
-	BGE push_r4
-	PUSH {r5}
+	POP {r6, r7}
+	CMP r6, r7
+	BGE push_r7
+	PUSH {r6}
 	BX lr
 
-push_r4
-	PUSH {r4}
+push_r7
+	PUSH {r7}
 	BX lr
-	
-	ENDP
 
 base
 	LDR r4, [r2]
