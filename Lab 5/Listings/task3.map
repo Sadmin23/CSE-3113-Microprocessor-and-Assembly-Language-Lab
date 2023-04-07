@@ -268,12 +268,12 @@ Image Symbol Table
     .text                                    0x080004f2   Section        0  sys_wrch.o(.text)
     [Anonymous Symbol]                       0x08000500   Section        0  system_stm32f4xx.o(.text.SystemInit)
     numbers                                  0x08000514   Data          20  task3.o(task3)
-    task3                                    0x08000514   Section       72  task3.o(task3)
+    task3                                    0x08000514   Section       92  task3.o(task3)
     n                                        0x08000528   Data           4  task3.o(task3)
     $v0                                      0x0800052c   Number         0  task3.o(task3)
-    num                                      0x0800052d   Thumb Code    20  task3.o(task3)
-    $v0                                      0x0800055c   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x0800055c   Section       26  fpinit.o(x$fpl$fpinit)
+    min                                      0x0800052d   Thumb Code    26  task3.o(task3)
+    $v0                                      0x08000570   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08000570   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000060   Data         512  startup_stm32f446xx.o(HEAP)
     HEAP                                     0x20000060   Section      512  startup_stm32f446xx.o(HEAP)
@@ -488,12 +488,12 @@ Image Symbol Table
     __default_signal_display                 0x080004c1   Thumb Code    50  defsig_general.o(.text)
     _ttywrch                                 0x080004f3   Thumb Code    14  sys_wrch.o(.text)
     SystemInit                               0x08000501   Thumb Code    18  system_stm32f4xx.o(.text.SystemInit)
-    main                                     0x08000541   Thumb Code     0  task3.o(task3)
-    _fp_init                                 0x0800055d   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08000575   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08000575   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08000578   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000588   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08000553   Thumb Code     0  task3.o(task3)
+    _fp_init                                 0x08000571   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08000589   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08000589   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x0800058c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800059c   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000060   Data           0  libspace.o(.bss)
 
@@ -505,9 +505,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000255
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000588, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x0000059c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000588, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000059c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -578,18 +578,18 @@ Memory Map of the image
     0x080004f2   0x080004f2   0x0000000e   Code   RO          173    .text               c_w.l(sys_wrch.o)
     0x08000500   0x08000500   0x00000012   Code   RO           15    .text.SystemInit    system_stm32f4xx.o
     0x08000512   0x08000512   0x00000002   PAD
-    0x08000514   0x08000514   0x00000048   Code   RO            1  * task3               task3.o
-    0x0800055c   0x0800055c   0x0000001a   Code   RO          121    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000576   0x08000576   0x00000002   PAD
-    0x08000578   0x08000578   0x00000010   Data   RO          196    Region$$Table       anon$$obj.o
+    0x08000514   0x08000514   0x0000005c   Code   RO            1  * task3               task3.o
+    0x08000570   0x08000570   0x0000001a   Code   RO          121    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0800058a   0x0800058a   0x00000002   PAD
+    0x0800058c   0x0800058c   0x00000010   Data   RO          196    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000588, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800059c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x08000588, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x0800059c, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -607,10 +607,10 @@ Image component sizes
 
         64         26        452          0       1536        876   startup_stm32f446xx.o
         18          0          0          0          0       2750   system_stm32f4xx.o
-        72         32          0          0          0        396   task3.o
+        92         32          0          0          0        404   task3.o
 
     ----------------------------------------------------------------------
-       156         58        468          0       1536       4022   Object Totals
+       176         58        468          0       1536       4030   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          2          0          0          0          0          0   (incl. Padding)
 
@@ -669,15 +669,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       948        132        468          0       1632       4714   Grand Totals
-       948        132        468          0       1632       4714   ELF Image Totals
-       948        132        468          0          0          0   ROM Totals
+       968        132        468          0       1632       4722   Grand Totals
+       968        132        468          0       1632       4722   ELF Image Totals
+       968        132        468          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1416 (   1.38kB)
+    Total RO  Size (Code + RO Data)                 1436 (   1.40kB)
     Total RW  Size (RW Data + ZI Data)              1632 (   1.59kB)
-    Total ROM Size (Code + RO Data + RW Data)       1416 (   1.38kB)
+    Total ROM Size (Code + RO Data + RW Data)       1436 (   1.40kB)
 
 ==============================================================================
 
