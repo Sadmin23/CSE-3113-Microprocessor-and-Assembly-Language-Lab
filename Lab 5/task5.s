@@ -3,27 +3,21 @@
 		EXPORT main
 
 sum1 PROC
-	POP {lr}
-	POP {r5, r6}
 	PUSH {lr}
-	MUL r6, r5, r6
-	PUSH {r5, r6}
+	ADD r0, r0, #1
+	POP {lr}
 	BX lr
-	ENDP
 
 sum2 PROC
 	PUSH {lr}
-	BL mult
-	POP {r2, r3} 
-	ADD r4,r2,r3
-	PUSH {r4}
+	BL sum1
+	BL sum1
 	POP {lr}
 	BX lr
-	ENDP
-
 main
 	MOV r0, #3
-    BL sum
+    BL sum2
+	MOV r6, r0
 	
     B Stop
 Stop B Stop
