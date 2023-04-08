@@ -2,27 +2,21 @@
 		ENTRY
 		EXPORT main
 
-x DCD 3
-y DCD 7
-
-sum PROC
+sum
 	POP {r2, r3}
-	LDR r2, [r2]
-	LDR r3, [r3]
-	ADD r4,r2,r3
-	PUSH {r4}
+	PUSH {lr}
+	ADD r0,r2,r3
+	POP {lr}
+	PUSH {r0}
 	BX lr
-	ENDP
 
 main
-	LDR r0, = x
-	LDR r1, = y
-	PUSH {lr}
+    MOV r0, #6 
+	MOV r1, #7
     PUSH {r0, r1}
     BL sum
 	POP {r5}
-    POP {pc}
 	
     B Stop
 Stop B Stop
- END
+ END		 

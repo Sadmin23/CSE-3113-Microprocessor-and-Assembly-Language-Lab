@@ -1,31 +1,24 @@
-	AREA p_two, CODE, READONLY
+	    AREA task1, CODE, READONLY
 		ENTRY
-    EXPORT main
-        
-fact PROC
-	POP {r2}
-	CMP r2,#0
-	BEQ ret
+		EXPORT main
+
+sum PROC
+	POP {r2, r3}
  
-	MUL r0, r0,r2
-	SUB r2,r2,#1
-	PUSH {r2}
-	B fact
-	ENDP
-ret 
+	ADD r0,r2,r3
 	PUSH {r0}
 	BX lr
+	ENDP
+
 main
-    MOV r1, #5 
-	MOV r0, #1
+    MOV r1, #6 
+	MOV r0, #7
     PUSH {lr} ; Save the return address
-    PUSH {r1} ; Push arguments onto the stack
-    BL fact ; Call the function
+    PUSH {r0, r1} ; Push arguments onto the stack
+    BL sum ; Call the function
 	POP {r5} ; pop return value
-    POP {pc} ; Pop the return address into pc
-    
-    
+    POP {pc} ; Pop the return address into pc   
     ; Halt the program
     B Stop
 Stop B Stop ; Infinite loop to halt the program
- END
+ END		 

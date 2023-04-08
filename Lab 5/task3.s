@@ -2,43 +2,27 @@
 		ENTRY
 		EXPORT main
 
-numbers DCD 4, 7, 3, 9, 8;
-n DCD 5
+x DCD 3
+y DCD 7
 
-min PROC
+sum PROC
 	POP {r2, r3}
-	CMP r3, #0
-	BEQ base
-	
-	SUB r3, r3, #1
-	LDR r4, [r2, r3, LSL #2]
-	CMP r5, r4
-	BGE push_r5
-	PUSH {r2, r3}
-	B min
-	ENDP
-
-push_r5
-	MOV r5, r4
-	PUSH {r2, r3}
-	B min
-	ENDP
-
-base
-	PUSH {r5}
+	LDR r2, [r2]
+	LDR r3, [r3]
+	ADD r4,r2,r3
+	PUSH {r4}
 	BX lr
+	ENDP
 
 main
-	LDR r0, = numbers
-	LDR r1, = n
-	LDR r1, [r1]
-	MOV r5, #100
-    PUSH {lr}
+	LDR r0, = x
+	LDR r1, = y
+	PUSH {lr}
     PUSH {r0, r1}
-    BL min
-	POP {r6}
+    BL sum
+	POP {r5}
     POP {pc}
 	
     B Stop
 Stop B Stop
- END		 
+ END
