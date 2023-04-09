@@ -11,8 +11,7 @@ sum PROC
 	LDR r5, [r3]
 	ADD r6,r4,r5
 	PUSH {r6}
-	BX lr
-	ENDP
+	MOV PC, LR
 
 main
 	LDR r0, = x

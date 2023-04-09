@@ -271,7 +271,7 @@ Image Symbol Table
     task3                                    0x08000514   Section       48  task3.o(task3)
     y                                        0x08000518   Data           4  task3.o(task3)
     $v0                                      0x0800051c   Number         0  task3.o(task3)
-    sum                                      0x0800051d   Thumb Code    14  task3.o(task3)
+    sum                                      0x0800051d   Thumb Code    30  task3.o(task3)
     $v0                                      0x08000544   Number         0  fpinit.o(x$fpl$fpinit)
     x$fpl$fpinit                             0x08000544   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
