@@ -2,21 +2,20 @@
 		ENTRY
 		EXPORT main
 
-sum1 PROC
+add1
 	PUSH {lr}
 	ADD r0, r0, #1
-	POP {lr}
-	BX lr
-
-sum2 PROC
+	POP {PC}
+	
+add2
 	PUSH {lr}
-	BL sum1
-	BL sum1
-	POP {lr}
-	BX lr
+	BL add1
+	BL add1
+	POP {PC}
+
 main
 	MOV r0, #3
-    BL sum2
+    BL add2
 	MOV r6, r0
 	
     B Stop
