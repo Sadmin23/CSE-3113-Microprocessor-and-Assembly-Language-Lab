@@ -43,7 +43,6 @@ mod_2
 	BNE loop_prime
 
 main
-	MOV r6, #3
 	MOV r9, #0
 	LDR r10, = numbers 
 	LDR r11, = n
@@ -51,7 +50,8 @@ main
 	
 loop	
 	LDR r0, [r10, r9, LSL #2]
-    PUSH {r0}
+	MOV r6, #3
+	PUSH {r0}
 	BL prime
 	ADD r9, r9, #1
 	CMP r9, r11
