@@ -2,8 +2,8 @@
 		ENTRY
 		EXPORT main
 
-numbers DCD 4, 7, 3, 9, 8;
-n DCD 5
+numbers DCD 1, 2, 9, 16, 23, 25;
+n DCD 6
 
 prime
 	POP {r2}
@@ -43,11 +43,19 @@ mod_2
 	BNE loop_prime
 
 main
-    MOV r0, #25
 	MOV r6, #3
+	MOV r9, #0
+	LDR r10, = numbers 
+	LDR r11, = n
+	LDR r11, [r11]
+	
+loop	
+	LDR r0, [r10, r9, LSL #2]
     PUSH {r0}
-    BL prime
-	POP {r9}
+	BL prime
+	ADD r9, r9, #1
+	CMP r9, r11
+	BLT loop
 
     B Stop
 Stop B Stop
