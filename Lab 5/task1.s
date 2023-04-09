@@ -5,7 +5,7 @@
 numbers DCD 4, 7, 3, 9, 8;
 n DCD 5
 
-prime PROC
+prime
 	POP {r2}
 	CMP r2, #1
 	BLE not_prime
@@ -23,19 +23,16 @@ loop_prime
 	BEQ not_prime
 	ADD r6, r6, #2
 	B loop_prime
-	ENDP
 
 not_prime
 	MOV r8, #1
-	push {r8}
-	BX lr
-	ENDP
+	PUSH {r8}
+	MOV PC, LR
 	
 check_prime
 	MOV r8, #2
 	push {r8}
-	BX lr
-	ENDP
+	MOV PC, LR
 	
 mod_2
 	MOV r5, #2
@@ -48,11 +45,9 @@ mod_2
 main
     MOV r0, #25
 	MOV r6, #3
-	PUSH {lr}
     PUSH {r0}
     BL prime
 	POP {r9}
-    POP {pc}
 
     B Stop
 Stop B Stop
