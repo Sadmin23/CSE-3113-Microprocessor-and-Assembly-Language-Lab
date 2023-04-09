@@ -2,17 +2,20 @@
 		ENTRY
 		EXPORT main
 
+x DCD 6
+y DCD 7
+
 sum
 	POP {r2, r3}
-	PUSH {lr}
-	ADD r0,r2,r3
-	POP {lr}
-	PUSH {r0}
-	BX lr
+	ADD r4,r2,r3
+	PUSH {r4}
+	MOV PC, LR
 
 main
-    MOV r0, #6 
-	MOV r1, #7
+	LDR r0, =x
+	LDR r0, [r0]
+	LDR r1, =y
+	LDR r1, [r1]
     PUSH {r0, r1}
     BL sum
 	POP {r5}
