@@ -7,18 +7,18 @@ y DCD 7
 
 sum
 	POP {r2, r3}
-	ADD r4,r2,r3
-	PUSH {r4}
-	MOV PC, LR
+	ADD r4,r2,r3	; adding the arguments
+	PUSH {r4}		; pushing the result
+	MOV PC, LR		; returning to the main
 
 main
 	LDR r0, =x
-	LDR r0, [r0]
-	LDR r1, =y
-	LDR r1, [r1]
-    PUSH {r0, r1}
-    BL sum
-	POP {r5}
+	LDR r0, [r0]	; loading the value of x
+	LDR r1, =y		
+	LDR r1, [r1]	; loading the value of y
+    PUSH {r0, r1}	; pushing the values as arguments
+    BL sum			; calling the function
+	POP {r5}		; saving the result in r5
 	
     B Stop
 Stop B Stop
