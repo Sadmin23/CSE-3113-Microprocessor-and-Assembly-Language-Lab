@@ -2,7 +2,7 @@
 		ENTRY
 		EXPORT main
 
-numbers DCD 4, 7, 3, 9, 8;
+numbers DCD 4, 7, -3, 9, 8;
 n DCD 5
 
 min

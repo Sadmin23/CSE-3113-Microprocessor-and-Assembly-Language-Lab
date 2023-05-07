@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'task2' 
+ * Project: 'print' 
  * Target:  'Target 1' 
  */
 

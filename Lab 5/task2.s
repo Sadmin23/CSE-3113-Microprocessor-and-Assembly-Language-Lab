@@ -1,4 +1,4 @@
-	    AREA task2, CODE, READONLY
+ AREA task2, CODE, READONLY
 		ENTRY
 		EXPORT main
 
@@ -22,4 +22,4 @@ main
 	
     B Stop
 Stop B Stop
- END		 
+ END
