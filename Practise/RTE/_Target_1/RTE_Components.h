@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'strlen' 
+ * Project: 'reverse' 
  * Target:  'Target 1' 
  */
 
