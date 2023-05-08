@@ -2,7 +2,7 @@
 		ENTRY
 		EXPORT main
 
-s DCB "Hello", 0
+s DCB "Hello World ", 0
 
 strlength
 	POP {r3, r4, r5}
