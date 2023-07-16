@@ -1,57 +1,42 @@
-
 #include<stdint.h>
 #include "led.h"
+#include "RCC.h"
+#include "GPIO.h"
 
 
-
-void delay(uint32_t count)
+void delay(uint32_t pwr_no)
 {
-  for(uint32_t i = 0 ; i < count ; i++);
+	uint32_t *pGpiodInpReg = (uint32_t*) &GPIOA->IDR;
+	
+	int a = *pGpiodInpReg & (1 << pwr_no);
+
+	if (a)
+		led_on(LED_PIN);
+	else
+		led_off(LED_PIN);
 }
 
 void led_init_all(void)
 {
+	uint32_t *pRccAhb1enr = (uint32_t*) &RCC->AHB1ENR;
+	uint32_t *pGpiodModeReg = (uint32_t*) &GPIOA->MODER;
 
-	uint32_t *pRccAhb1enr = (uint32_t*)0x40023830;
-	uint32_t *pGpiodModeReg = (uint32_t*)0x40020C00;
+	*pRccAhb1enr |= (1 << 0);
+	*pGpiodModeReg |= (1 << (2 * LED_PIN));
 
-
-	*pRccAhb1enr |= ( 1 << 3);
-	//configure LED_GREEN
-	*pGpiodModeReg |= ( 1 << (2 * LED_GREEN));
-	*pGpiodModeReg |= ( 1 << (2 * LED_ORANGE));
-	*pGpiodModeReg |= ( 1 << (2 * LED_RED));
-	*pGpiodModeReg |= ( 1 << (2 * LED_BLUE));
-
-#if 0
-	//configure the outputtype
-	*pGpioOpTypeReg |= ( 1 << (2 * LED_GREEN));
-	*pGpioOpTypeReg |= ( 1 << (2 * LED_ORANGE));
-	*pGpioOpTypeReg |= ( 1 << (2 * LED_RED));
-	*pGpioOpTypeReg |= ( 1 << (2 * LED_BLUE));
-#endif
-
-    led_off(LED_GREEN);
-    led_off(LED_ORANGE);
-    led_off(LED_RED);
-    led_off(LED_BLUE);
-
-
-
+    led_off(LED_PIN);
 }
 
 void led_on(uint8_t led_no)
 {
-  uint32_t *pGpiodDataReg = (uint32_t*)0x40020C14;
-  *pGpiodDataReg |= ( 1 << led_no);
-
+	uint32_t *pGpiodDataReg = (uint32_t*) &GPIOA->ODR;
+	*pGpiodDataReg |= (1 << led_no);
 }
 
 void led_off(uint8_t led_no)
 {
-	  uint32_t *pGpiodDataReg = (uint32_t*)0x40020C14;
-	  *pGpiodDataReg &= ~( 1 << led_no);
-
+	uint32_t *pGpiodDataReg = (uint32_t*) &GPIOA->ODR;
+	*pGpiodDataReg &= ~(1 << led_no);
 }
 
 
