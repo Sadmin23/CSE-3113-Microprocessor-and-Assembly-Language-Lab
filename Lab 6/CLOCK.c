@@ -1,8 +1,8 @@
 #include<stdint.h>
-#include"SystemClockConfig.h"
+#include"CLOCK.h"
 #include"RCC.h"
 
-void SystemClockConfig()
+void initClock()
 {
     uint32_t *rcc_cr = (uint32_t*) &RCC->CR;
     uint32_t *rcc_cfgr = (uint32_t*) &RCC->CFGR;

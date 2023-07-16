@@ -2,4 +2,4 @@
 #define PLL_N 	180
 #define PLL_P 	0
 
-void SystemClockConfig(void);
+void initClock(void);

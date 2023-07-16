@@ -14,7 +14,7 @@ LDFLAGS = -nostdlib -T stm32_ls.ld -Wl,-Map=final.map
 
 
 
-all:main.o led.o SystemClockConfig.o stm32_startup.o final.elf
+all:main.o CLOCK.o stm32_startup.o final.elf
 
 
 # $^ denotes dependency
@@ -23,16 +23,13 @@ all:main.o led.o SystemClockConfig.o stm32_startup.o final.elf
 main.o:main.c
 	$(CC) $(CFLAGS) -o $@ $^
 
-led.o:led.c
-	$(CC) $(CFLAGS) -o $@ $^
-
-SystemClockConfig.o:SystemClockConfig.c
+CLOCK.o:CLOCK.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 stm32_startup.o:stm32_startup.c
 	$(CC) $(CFLAGS) -o $@ $^
 
-final.elf: main.o led.o SystemClockConfig.o stm32_startup.o
+final.elf: main.o CLOCK.o stm32_startup.o
 	$(CC) $(LDFLAGS) -o $@ $^
 
 clean:
